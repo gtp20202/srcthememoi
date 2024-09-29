@@ -1,10 +1,7 @@
 import React from'react';
-//rotas
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
-//pages
 import About from './pages/About';
 import Contact from './pages/Contact';
-//componentes
 import NotFound from './components/NotFound';
 import FormData from './pages/FormData';
 import BuinessPage from './pages/Buiness-page';
@@ -21,15 +18,11 @@ function App() {
           <Route path='/' element={<Home />} />
           <Route path='/about' element={<About />} />
           <Route path='/contact' element={<Contact />} />
-          <Route path='/1007484836378392943029489' element={<FormData />} />
-          <Route path='/1007484836378392943029489/buiness' element={<BuinessPage />} />
-          <Route path='/1007484836378392943029489/confirm' element={<Confirm />} />
-          <Route path='/1007484836378392943029489/upload-image' element={<UploadImages />} />
-          <Route path='/1007484836378392943029489/final' element={<FinalComponent />} />
-
-
-
-
+          <Route path={`/${process.env.REACT_APP_ROUTER}`} element={<FormData />} />
+          <Route path={`/${process.env.REACT_APP_ROUTER}/buiness`} element={<BuinessPage />} />
+          <Route path={`/${process.env.REACT_APP_ROUTER}/confirm`} element={<Confirm />} />
+          <Route path={`/${process.env.REACT_APP_ROUTER}/upload-image`} element={<UploadImages />} />
+          <Route path={`/${process.env.REACT_APP_ROUTER}/final`} element={<FinalComponent />} />
           <Route path='*' element={<NotFound />} />
         </Routes>
       </BrowserRouter>
